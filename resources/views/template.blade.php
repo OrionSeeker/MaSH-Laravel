@@ -22,8 +22,8 @@
     </nav>
     @yield('content')
 
-    <footer class="fixed-bottom bg-primary">
-        <div class="text-center">
+    <footer class="fixed-bottom bg-dark">
+        <div class="text-center text-light">
             (c) Serendipity 2024 
         </div>
     </footer>

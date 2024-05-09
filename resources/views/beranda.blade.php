@@ -11,4 +11,42 @@
     </div>
 </div>
 
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/assets/img-geser/alpro2.png" class="mx-auto d-block" alt="Alpro">
+            <div class="carousel-caption">
+                <h3>Algoritma dan Pemrograman</h3>
+                <p>Mempelajari dasar-dasar dari pemrograman</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="/assets/img-geser/web2.png" class="mx-auto d-block" alt="web">
+            <div class="carousel-caption">
+                <h3>Pemrograman Web</h3>
+                <p>Mempelajari dasar-dasar dari pemrograman web</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="/assets/img-geser/sbd2.png"  class="mx-auto d-block" alt="SBD">
+            <div class="carousel-caption">
+                <h3>Sistem Basis Data</h3>
+                <p>Mempelajari dasar-dasar dari sistem basis data</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
 @endsection
