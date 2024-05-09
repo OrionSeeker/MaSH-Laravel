@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('beranda');
+}); 
+Route::get('/beranda', [MenuController::class, 'home']);
+Route::get('/list-kelas', [MenuController::class, 'list_kelas']);
+Route::get('/detail-kelas', [MenuController::class, 'detail_kelas']);
+
