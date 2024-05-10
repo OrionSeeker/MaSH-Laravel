@@ -1,4 +1,4 @@
-@extends('template')
+@extends('layouts.app')
 <!-- buat manggil template.blade sebagai templatenya   -->
 
 @section('content')
@@ -15,7 +15,7 @@
 </div>
 
 
-<h2 class="text-center">Kelas Pelatihan Baru</h2>
+<h2 class="text-center mt-4">Kelas Pelatihan Baru</h2>
 <div id="kelas-baru" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#kelas-baru" data-bs-slide-to="0" class="active"></button>

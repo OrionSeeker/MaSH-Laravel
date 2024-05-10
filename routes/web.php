@@ -21,3 +21,7 @@ Route::get('/beranda', [MenuController::class, 'home']);
 Route::get('/list-kelas', [MenuController::class, 'list_kelas']);
 Route::get('/detail-kelas', [MenuController::class, 'detail_kelas']);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
