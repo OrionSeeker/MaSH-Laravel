@@ -1,0 +1,22 @@
+#header-text{
+    width: 50%;
+}
+#header-img{
+    width: 50%;
+}
+
+#header-img-content{
+    max-width: 100%;
+}
+@media (max-width: 768px) {
+    .container-fluid {
+        flex-direction: column;
+    }
+    #header-container{
+        width: 100%;
+    }
+    #header-text{
+        width: 100%;
+    }
+
+}

@@ -3,19 +3,24 @@
 
 @section('content')
 <!-- ngisi yield pada template -->
-<div class="container-fluid">
-    <div class="p-5 mb-4 bg-light rounded-3 text-center">
+<div class="container-fluid d-flex justify-content-center align-items-center" id="header-container">
+    <div class="p-5 mb-4 bg-light rounded-3 text-center" id="header-text">
         <h1>Mataram Study Hub</h1>
         <p>Latih dirimu menjadi masyarakat yang berdaya saing tinggi</p>
         <a href="#" class="btn btn-primary">Belajar Sekarang</a>
     </div>
+    <div id="header-img">
+        <img src="assets/header-img.jpg" id="header-img-content">
+    </div>
 </div>
 
-<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+<h2 class="text-center">Kelas Pelatihan Baru</h2>
+<div id="kelas-baru" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#kelas-baru" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#kelas-baru" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#kelas-baru" data-bs-slide-to="2"></button>
     </div>
 
     <div class="carousel-inner">
@@ -42,10 +47,10 @@
         </div>
     </div>
 
-    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#kelas-baru" data-bs-slide="prev">
         <span class="carousel-control-prev-icon"></span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#kelas-baru" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
     </button>
 </div>
