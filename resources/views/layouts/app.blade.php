@@ -12,6 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('css/style.css'); }}" type="text/css">  
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -22,7 +23,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/beranda') }}">
                     <!-- {{ config('app.name', 'Mataram Study Hub') }} -->
-                    Mataram Study Hub
+                    Mataram Skill Hub
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

@@ -63,8 +63,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $lastUserId = User::max('id');
+        $nextUserId = $lastUserId + 1;
+        if($nextUserId>99){
+            $nomorIndukz = 'SIS' . $nextUserId;
+        }
+        else if($nextUserId>9){
+            $nomorIndukz = 'SIS0' . $nextUserId;
+        }
+        else{
+            $nomorIndukz = 'SIS00' . $nextUserId;
+        }
+        
+
         return User::create([
             'name' => $data['name'],
+            'nomorInduk' => $nomorIndukz,
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

@@ -3,9 +3,17 @@
 
 @section('content')
 <!-- ngisi yield pada template -->
+
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
+
+
 <div class="container-fluid d-flex justify-content-center align-items-center" id="header-container">
     <div class="p-5 mb-4 bg-light rounded-3 text-center" id="header-text">
-        <h1>Mataram Study Hub</h1>
+        <h1>Mataram Skill Hub</h1>
         <p>Latih dirimu menjadi masyarakat yang berdaya saing tinggi</p>
         <a href="#" class="btn btn-primary">Belajar Sekarang</a>
     </div>
