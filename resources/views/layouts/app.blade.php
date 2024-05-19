@@ -7,13 +7,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Mataram Skill Hub') }}</title>
+    <!-- <title>{{ config('app.name', 'Mataram Skill Hub') }}</title> -->
+    <title>Mataram Skill Hub</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('css/style.css'); }}" type="text/css">  
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -37,6 +38,9 @@
                         </li>
                         <li>
                             <a href="{{url('detail-kelas')}}" class="nav-link">Detail Kelas</a>
+                        </li>
+                        <li>
+                            <a href="{{url('peserta')}}" class="nav-link">Atur peserta</a>
                         </li>
                     </ul>
 
