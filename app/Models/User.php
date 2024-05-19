@@ -23,6 +23,7 @@ class User extends Authenticatable
         'nomorInduk',
         'email',
         'password',
+        'role',
     ];
 
     /**
