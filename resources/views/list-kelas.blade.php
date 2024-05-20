@@ -74,7 +74,7 @@
         <div class="col-md-4 mb-4">
             <a class="d-flex flex-column align-items-center text-center" href="{{ url('detail-kelas') }}"> 
                 <div class="image-container">
-                    <img width="100%" height="150" src="/assets/img-geser/sbd2.png" alt="Sistem Basis Data">
+                    <img width="100%" height="150" src="/assets/img-geser/pohon.jpg" alt="Sistem Basis Data">
                     <div class="image-text">Sistem Basis Data</div>
                 </div>
             </a>

@@ -17,4 +17,8 @@ class MenuController extends Controller
     public function detail_kelas(){
         return view('detail-kelas');
     }
+
+    public function kelola_user(){
+        return view('admin.kelolauser');
+    }
 }

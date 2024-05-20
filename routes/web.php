@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\MentorController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('peserta', PesertaController::class);
 Route::resource('mentor', MentorController::class);
+Route::resource('admin', AdminController::class);
+
+Route::get('/kelola-user', [MenuController::class, 'kelola_user']);
