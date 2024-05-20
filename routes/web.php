@@ -29,8 +29,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('peserta', PesertaController::class);
-Route::resource('mentor', MentorController::class);
-Route::resource('admin', AdminController::class);
+Route::resource('peserta', PesertaController::class)->middleware('can:isAdmin');
+Route::resource('mentor', MentorController::class)->middleware('can:isAdmin');
+Route::resource('admin', AdminController::class)->middleware('can:isAdmin');
 
-Route::get('/kelola-user', [MenuController::class, 'kelola_user']);
+Route::get('/kelola-user', [MenuController::class, 'kelola_user'])->middleware('can:isAdmin');

@@ -38,12 +38,14 @@
                         <li>
                             <a href="{{url('list-kelas')}}" class="nav-link">List Kelas</a>
                         </li>
+                        @can('isAdmin')
                         <li>
-                            <a href="{{url('detail-kelas')}}" class="nav-link">Detail Kelas</a>
+                            <a href="{{url('kelola-user')}}" class="nav-link">Kelola User</a>
                         </li>
-                        <li>
+                        @endcan
+                        <!-- <li>
                             <a href="{{url('peserta')}}" class="nav-link">Atur peserta</a>
-                        </li>
+                        </li> -->
                     </ul>
 
                     <!-- Right Side Of Navbar -->
