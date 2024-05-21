@@ -43,21 +43,21 @@
                         <h4 class="col-8">: {{$user_role}}</h4>
                     </div>
                 </div>
-
+                @can('isPeserta')
                 <div class="card-header">
-                    <h3>Kelas yang diikuti Peserta</h3>
+                    <h3>Kelas yang diikuti</h3>
                 </div>
                 <div class="card-body">
 
                 </div>
 
                 <div class="card-header">
-                    <h3>Sertifikat yang dimiliki Peserta</h3>
+                    <h3>Sertifikat yang dimiliki</h3>
                 </div>
                 <div class="card-body">
 
                 </div>
-
+                @endcan
             </div>
         </div>
     </div>
