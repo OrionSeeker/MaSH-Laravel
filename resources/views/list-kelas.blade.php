@@ -42,7 +42,7 @@
 
 @section('content')
 
-<h2 class="text-center mt-4">List Kelas yang Tersedia</h2>
+<h2 class="text-center mt-4">Kelas yang Tersedia</h2>
 <div class="container">
     <div class="row">
         <div class="col-md-4 mb-4">

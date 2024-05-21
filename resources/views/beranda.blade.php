@@ -10,12 +10,13 @@
     </div>
 @endif
 
+<script src="https://kit.fontawesome.com/f27a469d44.js" crossorigin="anonymous"></script>
 
 <div class="container-fluid d-flex justify-content-center align-items-center" id="header-container">
     <div class="p-5 mb-4 bg-light rounded-3 text-center" id="header-text">
         <h1>Mataram Skill Hub</h1>
         <p>Latih dirimu menjadi masyarakat yang berdaya saing tinggi</p>
-        <a href="#" class="btn btn-primary">Belajar Sekarang</a>
+        <a href="{{ url('/list-kelas') }}" class="btn btn-primary">Belajar Sekarang</a>
     </div>
     <div id="header-img">
         <img src="assets/header-img.jpg" id="header-img-content">
@@ -61,5 +62,84 @@
     <button class="carousel-control-next" type="button" data-bs-target="#kelas-baru" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
     </button>
+</div>
+
+<div class="mentor">
+    <h2>Mentor Terbaik Kami</h2>
+    <div class='row'>
+        <div class="mentor-card">
+            <img src="/assets/mentor-dan-review/1.jpg">
+            <p class="mentor-name">Albert Derra</p>
+        </div>
+        <div class="mentor-card">
+            <img src="/assets/mentor-dan-review/2.jpg">
+            <p class="mentor-name">Christian Buehner</p>
+        </div>
+        <div class="mentor-card">
+            <img src="/assets/mentor-dan-review/3.jpg">
+            <p class="mentor-name">Brooke Cagle</p>
+        </div>
+        <div class="mentor-card">
+            <img src="/assets/mentor-dan-review/4.jpg">
+            <p class="mentor-name">Ian Dooley</p>
+        </div>
+    </div> 
+</div>
+
+<div class="review">
+    <h2 class="heading">Review Peserta</h2>
+    <div class="box-container">
+        <div class="box">
+            <div class="star">
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            </div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa necessitatibus ea voluptas rerum cupiditate inventore facere iure quia fugit nulla suscipit dolor quidem tempore a architecto alias, soluta maxime, debitis aliquid consequuntur pariatur molestiae eaque qui voluptatem. Adipisci quos, optio architecto vero consequuntur illum aperiam ipsum facere voluptatibus a quia.</p>
+            <div class="user">
+                <img src="/assets/mentor-dan-review/7.jpg" alt="">
+                <div class="user-info">
+                    <h3>Christopper</h3>
+                </div>
+                <i class="fa-solid fa-quote-right"></i>
+            </div>
+        </div>
+        <div class="box">
+            <div class="star">
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            </div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa necessitatibus ea voluptas rerum cupiditate inventore facere iure quia fugit nulla suscipit dolor quidem tempore a architecto alias, soluta maxime, debitis aliquid consequuntur pariatur molestiae eaque qui voluptatem. Adipisci quos, optio architecto vero consequuntur illum aperiam ipsum facere voluptatibus a quia.</p>
+            <div class="user">
+                <img src="/assets/mentor-dan-review/6.jpg" alt="">
+                <div class="user-info">
+                    <h3>Chriss Sczhebur</h3>
+                </div>
+                <i class="fa-solid fa-quote-right"></i>
+            </div>
+        </div>
+        <div class="box">
+            <div class="star">
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            </div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa necessitatibus ea voluptas rerum cupiditate inventore facere iure quia fugit nulla suscipit dolor quidem tempore a architecto alias, soluta maxime, debitis aliquid consequuntur pariatur molestiae eaque qui voluptatem. Adipisci quos, optio architecto vero consequuntur illum aperiam ipsum facere voluptatibus a quia.</p>
+            <div class="user">
+                <img src="/assets/mentor-dan-review/5.jpg" alt="">
+                <div class="user-info">
+                    <h3>John Deo</h3>
+                </div>
+                <i class="fa-solid fa-quote-right"></i>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

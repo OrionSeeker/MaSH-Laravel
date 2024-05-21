@@ -20,7 +20,7 @@
 
     @yield('style')
 </head>
-<body>
+<body class = 'd-flex flex-column min-vh-100'>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm navbar-template">
             <div class="container">
@@ -36,7 +36,21 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li>
-                            <a href="{{url('list-kelas')}}" class="nav-link">List Kelas</a>
+                            <a href="{{url('list-kelas')}}" class="nav-link">Daftar Kelas</a>
+                        </li>
+                        <li>
+                        <div class="dropdown hover-dropdown">
+                            <a href="#" role="button" class="nav-link dropdown-toggle" id="dropdownMenuLink" aria-expanded="false">
+                                Hubungi Kami
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="mailto:admin@mataram-sh.com"><i class="bi bi-envelope-at-fill"></i> Email</a></li>
+                                <li><a class="dropdown-item" href="https://wa.me/+6281917921234"><i class="bi bi-whatsapp"></i> Whatsapp</a></li>
+                                <li><a class="dropdown-item" href="https://instagram.com/michael.eff"><i class="bi bi-instagram"></i> Instagram</a></li>
+                                <li><a class="dropdown-item" href="https://twitter.com"><i class="bi bi-twitter"></i> Twitter</a></li>
+                                <li><a class="dropdown-item" href="https://facebook.com"><i class="bi bi-facebook"></i> Facebook</a></li>
+                            </ul>
+                        </div>
                         </li>
                         @can('isAdmin')
                         <li>
@@ -94,5 +108,21 @@
             @yield('content')
         </main>
     </div>
+
+    <div class="footer mt-auto">
+    <footer>
+        <div class="social">
+            <a href="#"><i class="bi bi-envelope-at-fill"></i></a>
+            <a href="#"><i class="bi bi-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <div class="credit">
+            <!-- <p>Created by <a href="">Serendipity Team</a> | &copy; 2024.</p> -->
+            <p>Created by Serendipity Team | &copy; 2024.</p>
+        </div>
+    </footer>
+</div>
 </body>
 </html>

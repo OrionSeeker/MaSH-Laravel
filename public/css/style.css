@@ -25,3 +25,132 @@
 .navbar-template{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.hover-dropdown .dropdown-menu {
+    display: none;
+}
+
+
+.hover-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.hover-dropdown .dropdown-menu {
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+}
+
+.hover-dropdown:hover .dropdown-menu {
+    opacity: 1;
+}
+
+.mentor h2{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.mentor .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    align-items: center; 
+    /* padding: 20px; */
+    justify-content: space-between;
+}
+
+.mentor .row .mentor-card{
+    text-align: center;
+    flex: 1; 
+    margin: 10px;
+}
+
+.mentor .row .mentor-card img{
+    border-radius: 50%;
+    height: auto;
+    max-width: 100%;
+    /* width: 50%; */
+}
+
+.mentor .row .mentor-card .mentor-name{
+    margin-top: 1.5rem;
+}
+
+footer{
+    background-color:  #dedede;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+footer .social{
+    padding: 1rem 0;
+}
+
+footer .social a{
+    color: black;
+    margin: 1rem;
+}
+
+footer .credit a{
+    color:black;
+}
+
+.review h2{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.review .box-container{
+    display: flex;
+    flex-wrap:wrap
+    gap: 1.5rem;
+}
+
+.review .box-container .box{
+    flex: 1 1 30rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+    border-radius: 5rem;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+.review .box-container .box .fa-quote-right{
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    font-size: 3rem;
+    color: #999;
+}
+
+.review .box-container .box .star i{
+    font-size: 1.5rem;
+}
+
+.review .box-container .box p{
+    /* font-size: 1.5rem; */
+    color: #999;
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+
+.review .box-container .box .user{
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.review .box-container .box .user img{
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right:1rem;
+}
+
+.review .box-container .box .user h3{
+    font-size: 1.5rem;
+    color: #999;
+}
