@@ -34,4 +34,31 @@ class HomeController extends Controller
 
         return view('home', compact('user_id', 'user_nomorInduk', 'user_name', 'user_email', 'user_role'));
     }
+
+    public function edit()
+    {
+        $user = Auth::user();
+        return view('profile.edit', compact('user'));
+    }
+
+    public function update(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            // 'nomorInduk' => 'required|string|max:255',
+            // Add other validation rules as necessary
+        ]);
+
+        $user = Auth::user();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if($request->password != "-"){
+            $user->password = $request->password;
+        } 
+        // Add other fields as necessary
+        $user->save();
+
+        return redirect()->route('home')->with('success', 'Profile updated successfully.');
+    }
 }

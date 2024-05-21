@@ -42,6 +42,9 @@
                         <h4 class="col-4">Role</h4>
                         <h4 class="col-8">: {{$user_role}}</h4>
                     </div>
+                    <div class="row mt-4">
+                        <a href="{{ route('profile.edit') }}" class="btn btn-primary"><i class="bi bi-pencil-fill"></i> Edit Profile</a>
+                    </div>
                 </div>
                 @can('isPeserta')
                 <div class="card-header">

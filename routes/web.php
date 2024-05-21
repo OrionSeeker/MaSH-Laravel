@@ -5,6 +5,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\MentorController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,6 @@ Route::resource('mentor', MentorController::class)->middleware('can:isAdmin');
 Route::resource('admin', AdminController::class)->middleware('can:isAdmin');
 
 Route::get('/kelola-user', [MenuController::class, 'kelola_user'])->middleware('can:isAdmin');
+
+Route::get('/profile/edit', [HomeController::class, 'edit'])->name('profile.edit');
+Route::post('/profile/edit', [HomeController::class, 'update'])->name('profile.update');
