@@ -74,23 +74,23 @@
         <div class="col-md-4 mb-4">
             <a class="d-flex flex-column align-items-center text-center" href="{{ url('detail-kelas') }}"> 
                 <div class="image-container">
-                    <img width="100%" height="150" src="/assets/img-geser/pohon.jpg" alt="Sistem Basis Data">
-                    <div class="image-text">Sistem Basis Data</div>
+                    <img width="100%" height="150" src="/assets/img-geser/sisdig.png" alt="Sistem digital">
+                    <div class="image-text">Sistem Digital</div>
                 </div>
             </a>
         </div>
         <div class="col-md-4 mb-4">
             <a class="d-flex flex-column align-items-center text-center" href="{{ url('detail-kelas') }}"> <div class="image-container">
-                    <img width="100%" height="150" src="/assets/img-geser/web2.png" alt="Pemrograman Web">
-                    <div class="image-text">Pemrograman Web</div>
+                    <img width="100%" height="150" src="/assets/img-geser/strukturdata.png" alt="struktur data">
+                    <div class="image-text">Struktur Data</div>
                 </div>
             </a>
         </div>
         <div class="col-md-4 mb-4">
             <a class="d-flex flex-column align-items-center text-center" href="{{ url('detail-kelas') }}"> 
                 <div class="image-container">
-                    <img width="100%" height="150" src="/assets/img-geser/alpro2.png" alt="Algoritma dan Pemrograman">
-                    <div class="image-text">Algoritma dan Pemrograman</div>
+                    <img width="100%" height="150" src="/assets/img-geser/jarkom.png" alt="Jarkom">
+                    <div class="image-text">Jaringan Komputer</div>
                 </div>
             </a>
         </div>
@@ -100,23 +100,23 @@
         <div class="col-md-4 mb-4">
             <a class="d-flex flex-column align-items-center text-center" href="{{ url('detail-kelas') }}"> 
                 <div class="image-container">
-                    <img width="100%" height="150" src="/assets/img-geser/sbd2.png" alt="Sistem Basis Data">
-                    <div class="image-text">Sistem Basis Data</div>
+                    <img width="100%" height="150" src="/assets/img-geser/mobile.png" alt="mobile">
+                    <div class="image-text">Pemrograman Mobile (Android)</div>
                 </div>
             </a>
         </div>
         <div class="col-md-4 mb-4">
             <a class="d-flex flex-column align-items-center text-center" href="{{ url('detail-kelas') }}"> <div class="image-container">
-                    <img width="100%" height="150" src="/assets/img-geser/web2.png" alt="Pemrograman Web">
-                    <div class="image-text">Pemrograman Web</div>
+                    <img width="100%" height="150" src="/assets/img-geser/oop.png" alt="Pemrograman Orientasi Objek">
+                    <div class="image-text">Pemrograman Berorientasi Objek</div>
                 </div>
             </a>
         </div>
         <div class="col-md-4 mb-4">
             <a class="d-flex flex-column align-items-center text-center" href="{{ url('detail-kelas') }}"> 
                 <div class="image-container">
-                    <img width="100%" height="150" src="/assets/img-geser/alpro2.png" alt="Algoritma dan Pemrograman">
-                    <div class="image-text">Algoritma dan Pemrograman</div>
+                    <img width="100%" height="150" src="/assets/img-geser/file-system.png" alt="sisber">
+                    <div class="image-text">Sistem Berkas</div>
                 </div>
             </a>
         </div>
@@ -126,23 +126,23 @@
         <div class="col-md-4 mb-4">
             <a class="d-flex flex-column align-items-center text-center" href="{{ url('detail-kelas') }}"> 
                 <div class="image-container">
-                    <img width="100%" height="150" src="/assets/img-geser/sbd2.png" alt="Sistem Basis Data">
-                    <div class="image-text">Sistem Basis Data</div>
+                    <img width="100%" height="150" src="/assets/img-geser/distributed-system.png" alt="Sistem terdistribusi">
+                    <div class="image-text">Sistem Terdistribusi</div>
                 </div>
             </a>
         </div>
         <div class="col-md-4 mb-4">
             <a class="d-flex flex-column align-items-center text-center" href="{{ url('detail-kelas') }}"> <div class="image-container">
-                    <img width="100%" height="150" src="/assets/img-geser/web2.png" alt="Pemrograman Web">
-                    <div class="image-text">Pemrograman Web</div>
+                    <img width="100%" height="150" src="/assets/img-geser/metnum.png" alt="Metode Numerik">
+                    <div class="image-text">Metode Numerik</div>
                 </div>
             </a>
         </div>
         <div class="col-md-4 mb-4">
             <a class="d-flex flex-column align-items-center text-center" href="{{ url('detail-kelas') }}"> 
                 <div class="image-container">
-                    <img width="100%" height="150" src="/assets/img-geser/alpro2.png" alt="Algoritma dan Pemrograman">
-                    <div class="image-text">Algoritma dan Pemrograman</div>
+                    <img width="100%" height="150" src="/assets/img-geser/pohon.jpg" alt="Pohon">
+                    <div class="image-text">Pohon</div>
                 </div>
             </a>
         </div>

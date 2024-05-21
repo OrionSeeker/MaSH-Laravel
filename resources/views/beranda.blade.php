@@ -19,7 +19,7 @@
         <a href="{{ url('/list-kelas') }}" class="btn btn-primary">Belajar Sekarang</a>
     </div>
     <div id="header-img">
-        <img src="assets/header-img.jpg" id="header-img-content">
+        <img src="assets/mentor-dan-review/laptop.jpg" id="header-img-content">
     </div>
 </div>
 
@@ -69,19 +69,19 @@
     <div class='row'>
         <div class="mentor-card">
             <img src="/assets/mentor-dan-review/1.jpg">
-            <p class="mentor-name">Albert Derra</p>
+            <h4 class="mentor-name">Lalu Cholidimas Raniawan</h4>
         </div>
         <div class="mentor-card">
             <img src="/assets/mentor-dan-review/2.jpg">
-            <p class="mentor-name">Christian Buehner</p>
+            <h4 class="mentor-name">Michael Effendy</h4>
         </div>
         <div class="mentor-card">
             <img src="/assets/mentor-dan-review/3.jpg">
-            <p class="mentor-name">Brooke Cagle</p>
+            <h4 class="mentor-name">Wahyuni Sulastri</h4>
         </div>
         <div class="mentor-card">
             <img src="/assets/mentor-dan-review/4.jpg">
-            <p class="mentor-name">Ian Dooley</p>
+            <h4 class="mentor-name">Yeon Jun</h4>
         </div>
     </div> 
 </div>
@@ -97,11 +97,11 @@
             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
             </div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa necessitatibus ea voluptas rerum cupiditate inventore facere iure quia fugit nulla suscipit dolor quidem tempore a architecto alias, soluta maxime, debitis aliquid consequuntur pariatur molestiae eaque qui voluptatem. Adipisci quos, optio architecto vero consequuntur illum aperiam ipsum facere voluptatibus a quia.</p>
+            <p>Dulu, saya sempat tidak percaya diri dengan kemampuan saya. Namun, skill yang saya dapatkan membuat saya berani untuk melamar ke salah satu bank BUMN ternama di Indonesia. Akhirnya, saya berhasil diterima sebagai Full Stack Developer di Bank ABC.</p>
             <div class="user">
                 <img src="/assets/mentor-dan-review/7.jpg" alt="">
                 <div class="user-info">
-                    <h3>Christopper</h3>
+                    <h3>Muhammad Zidan Azzaki</h3>
                 </div>
                 <i class="fa-solid fa-quote-right"></i>
             </div>
@@ -114,11 +114,11 @@
             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
             </div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa necessitatibus ea voluptas rerum cupiditate inventore facere iure quia fugit nulla suscipit dolor quidem tempore a architecto alias, soluta maxime, debitis aliquid consequuntur pariatur molestiae eaque qui voluptatem. Adipisci quos, optio architecto vero consequuntur illum aperiam ipsum facere voluptatibus a quia.</p>
+            <p>Belajar di Mataram Skill Hub tidak hanya bermanfaat bagi mereka yang masih pemula dalam hal wawasan teknologi, tetapi juga membantu profesional yang sudah berpengalaman kerja seperti saya untuk dapat mengupdate keterampilan.</p>
             <div class="user">
                 <img src="/assets/mentor-dan-review/6.jpg" alt="">
                 <div class="user-info">
-                    <h3>Chriss Sczhebur</h3>
+                    <h3>Baiq Annisa Tsalist Agna</h3>
                 </div>
                 <i class="fa-solid fa-quote-right"></i>
             </div>
@@ -131,11 +131,11 @@
             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
             </div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa necessitatibus ea voluptas rerum cupiditate inventore facere iure quia fugit nulla suscipit dolor quidem tempore a architecto alias, soluta maxime, debitis aliquid consequuntur pariatur molestiae eaque qui voluptatem. Adipisci quos, optio architecto vero consequuntur illum aperiam ipsum facere voluptatibus a quia.</p>
+            <p>Disajikan dengan struktur pembelajaran yang rapi, ilmu-ilmu teknis di Mataram Skill Hub sangat mudah saya pahami dan terapkan sampai sekarang. Mataram Skill Hub memastikan semua lulusannya punya dasar yang kuat di bidang pemrograman dan bidang lainnya.</p>
             <div class="user">
                 <img src="/assets/mentor-dan-review/5.jpg" alt="">
                 <div class="user-info">
-                    <h3>John Deo</h3>
+                    <h3>Gusti Ayu Devi</h3>
                 </div>
                 <i class="fa-solid fa-quote-right"></i>
             </div>

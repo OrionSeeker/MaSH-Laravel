@@ -5,7 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <!-- <div class="card-header">{{ __('Dashboard') }}</div> -->
+                <div class="card-header">
+                    <h3>Dashboard</h3>
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -40,6 +43,21 @@
                         <h4 class="col-8">: {{$user_role}}</h4>
                     </div>
                 </div>
+
+                <div class="card-header">
+                    <h3>Kelas yang diikuti Peserta</h3>
+                </div>
+                <div class="card-body">
+
+                </div>
+
+                <div class="card-header">
+                    <h3>Sertifikat yang dimiliki Peserta</h3>
+                </div>
+                <div class="card-body">
+
+                </div>
+
             </div>
         </div>
     </div>

@@ -114,9 +114,9 @@
         <div class="social">
             <a href="#"><i class="bi bi-envelope-at-fill"></i></a>
             <a href="#"><i class="bi bi-whatsapp"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
         </div>
         <div class="credit">
             <!-- <p>Created by <a href="">Serendipity Team</a> | &copy; 2024.</p> -->
