@@ -13,7 +13,7 @@
                 <ul class="list-group">
                     Nama <input type="text" name="inputName" required>
                     Email <input type="email" name="inputEmail" required>
-                    Role <input type="text" name="inputRole" readonly value="mentor">
+                    Role <input type="text" name="inputRole" readonly value="admin">
                     Password <input type="password" name="inputPassword" required>
                     <br>
                 </ul>
