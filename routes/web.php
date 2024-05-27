@@ -23,7 +23,7 @@ Route::get('/', function () {
 }); 
 Route::get('/beranda', [MenuController::class, 'home']);
 Route::get('/list-kelas', [MenuController::class, 'list_kelas']);
-Route::get('/detail-kelas', [MenuController::class, 'detail_kelas']);
+// Route::get('/detail-kelas', [MenuController::class, 'detail_kelas']);
 
 
 Auth::routes();
@@ -45,3 +45,7 @@ use App\Http\Controllers\KelasController;
 Route::get('/certificate/{name}', [CertificateController::class, 'generateCertificate']);
 
 Route::resource('kelas', KelasController::class)->middleware('can:isAdmin');
+
+use App\Http\Controllers\JoinKelasController;
+Route::resource('joinkelas', JoinKelasController::class);
+Route::get('/detail-kelas/{id}', [JoinKelasController::class, 'show'])->name('detail-kelas.show');
