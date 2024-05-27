@@ -38,3 +38,7 @@ Route::get('/kelola-user', [MenuController::class, 'kelola_user'])->middleware('
 
 Route::get('/profile/edit', [HomeController::class, 'edit'])->name('profile.edit');
 Route::post('/profile/edit', [HomeController::class, 'update'])->name('profile.update');
+
+use App\Http\Controllers\CertificateController;
+
+Route::get('/certificate/{name}', [CertificateController::class, 'generateCertificate']);
