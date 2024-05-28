@@ -12,7 +12,7 @@
                 @foreach($dataSoal as $s)
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <label>Soal: {{$s->soal}}</label>
+                        <h4>{{$s->soal}}</h4>
                         <select class="form-select" name="inputJawaban[{{$s->id}}]" required>
                             <option value="">Pilih salah satu</option>
                             <option value="1">{{$s->opsi1}}</option>
@@ -22,6 +22,7 @@
                         </select>
                     </li>
                 </ul>
+                <br>
                 @endforeach
                 <input type="hidden" name="inputKelas" value="{{ $dataKelas->id }}">
                 <button type="submit" class="btn btn-success mt-3">

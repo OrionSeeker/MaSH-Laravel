@@ -37,7 +37,7 @@ class MulaiQuizController extends Controller
             $soal = SoalQuiz::find($soalId);
 
             // Cek jawabannya bener atau engga
-            $skor = ($soal && $soal->opsibenar == $jawaban) ? 1 : 0;
+            $skor = ($soal && $soal->opsibenar == $jawaban) ? 10 : 0;
 
             MulaiQuiz::create([
                 'user_id' => $userID,
