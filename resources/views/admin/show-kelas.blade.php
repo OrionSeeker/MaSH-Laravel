@@ -20,6 +20,10 @@
                 <h4 class="col-4">Deskripsi</h4>
                 <h4 class="col-8">: {{$dataKelas->deskripsi}}</h4>
             </div>
+            <div class="row ml-2">
+                <h4 class="col-4">Gambar</h4>
+                <h4 class="col-8"><img width="50%" height="150" src="{{ $dataKelas->url_gambar ? asset('assets/img-kelas/' . $dataKelas->url_gambar) : asset('assets/img-kelas/default.jpg') }}" alt="{{ $dataKelas->nama }}"></h4>
+            </div>
         </div>
 
     </div>

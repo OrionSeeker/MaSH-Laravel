@@ -15,5 +15,6 @@ class Kelas extends Model
         'id',
         'nama',
         'deskripsi',
+        'url_gambar'
     ];
 }

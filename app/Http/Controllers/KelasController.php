@@ -28,12 +28,27 @@ class KelasController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'inputName' => 'required|string|max:255',
+            'inputDeskripsi' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $imageName = null;
+
+        if ($request->hasFile('image')) {
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('assets/img-kelas/'), $imageName);
+        }
+
         Kelas::create([
             'nama' => $request->inputName,
             'deskripsi' => $request->inputDeskripsi,
+            'url_gambar' => $imageName
         ]);
 
         return redirect()->route('kelas.index');
+
     }
 
     /**
@@ -59,9 +74,23 @@ class KelasController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'inputName' => 'required|string|max:255',
+            'inputDeskripsi' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $imageName = null;
+
+        if ($request->hasFile('image')) {
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('assets/img-kelas/'), $imageName);
+        }
+
         $kelas = Kelas::find($id);
         $kelas->nama = $request->inputName;
         $kelas->deskripsi = $request->inputDeskripsi;
+        $kelas->url_gambar = $imageName;
         $kelas->save();
 
         return redirect()->route('kelas.index');

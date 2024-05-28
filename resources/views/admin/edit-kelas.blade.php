@@ -8,12 +8,13 @@
         </div>
         <div class="card-body">
             <a href="{{route('kelas.index')}}" class="btn btn-primary"><i class="bi bi-chevron-double-left"></i> Kembali</a>
-            <form action="{{route('kelas.update', $dataKelas->id)}}" method="POST">
+            <form action="{{route('kelas.update', $dataKelas->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <ul class="list-group">
                     Nama <input type="text" name="inputName" required value="{{$dataKelas->nama}}">
-                    Email <input type="text" name="inputDeskripsi" required value="{{$dataKelas->deskripsi}}">
+                    Deskripsi <input type="text" name="inputDeskripsi" required value="{{$dataKelas->deskripsi}}">
+                    Upload Gambar (Kosongkan jika tidak ingin diubah)<input type="file" class="form-control-file" id="image" name="image">
                 </ul>
                 <br>
                 <button type="submit" class="btn btn-success">

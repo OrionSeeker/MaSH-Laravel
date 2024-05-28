@@ -14,6 +14,7 @@
                     <th>ID</th>
                     <th>Nama</th>
                     <th>Deskripsi</th>
+                    <th>Gambar</th>
                     <th>Action</th>
                 </tr>
                 @foreach($dataKelas as $s)
@@ -21,6 +22,7 @@
                     <td>{{$s->id}}</td>
                     <td>{{$s->nama}}</td>
                     <td>{{$s->deskripsi}}</td>
+                    <td><img width="100%" height="100" src="{{ $s->url_gambar ? asset('assets/img-kelas/' . $s->url_gambar) : asset('assets/img-kelas/default.jpg') }}" alt="{{ $s->nama }}"></td>
                     <td>
                         <ul class="nav">
                             <a href="{{route('kelas.show', $s->id)}}" class="btn btn-success me-2"><i class="bi bi-person-fill"></i> Show</a>
