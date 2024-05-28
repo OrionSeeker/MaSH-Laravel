@@ -53,5 +53,8 @@ Route::get('/detail-kelas/{id}', [JoinKelasController::class, 'show'])->name('de
 Route::get('/list-kelas', [JoinKelasController::class, 'index'])->name('list-kelas');
 
 use App\Http\Controllers\MateriController;
+use App\Http\Controllers\SoalQuizController;
 
 Route::resource('materi', MateriController::class);
+
+Route::resource('soal', SoalQuizController::class);
