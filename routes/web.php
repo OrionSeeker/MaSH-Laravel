@@ -22,7 +22,7 @@ Route::get('/', function () {
     return view('beranda');
 }); 
 Route::get('/beranda', [MenuController::class, 'home']);
-Route::get('/list-kelas', [MenuController::class, 'list_kelas']);
+// Route::get('/list-kelas', [MenuController::class, 'list_kelas']);
 // Route::get('/detail-kelas', [MenuController::class, 'detail_kelas']);
 
 
@@ -49,3 +49,5 @@ Route::resource('kelas', KelasController::class)->middleware('can:isAdmin');
 use App\Http\Controllers\JoinKelasController;
 Route::resource('joinkelas', JoinKelasController::class);
 Route::get('/detail-kelas/{id}', [JoinKelasController::class, 'show'])->name('detail-kelas.show');
+
+Route::get('/list-kelas', [JoinKelasController::class, 'index'])->name('list-kelas');

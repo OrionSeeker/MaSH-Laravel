@@ -15,7 +15,8 @@ class JoinKelasController extends Controller
      */
     public function index()
     {
-        //
+        $daftarKelas = Kelas::all();
+        return view('list-kelas', compact('daftarKelas'));
     }
 
     /**

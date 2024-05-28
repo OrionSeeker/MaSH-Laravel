@@ -10,9 +10,9 @@ class MenuController extends Controller
         return view('beranda');
     }
 
-    public function list_kelas(){
-        return view('list-kelas');
-    }
+    // public function list_kelas(){
+    //     return view('list-kelas');
+    // }
 
     // public function detail_kelas(){
     //     return view('detail-kelas');
