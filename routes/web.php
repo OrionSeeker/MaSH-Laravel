@@ -58,3 +58,7 @@ use App\Http\Controllers\SoalQuizController;
 Route::resource('materi', MateriController::class);
 
 Route::resource('soal', SoalQuizController::class);
+
+use App\Http\Controllers\MulaiQuizController;
+Route::resource('mulai-kuis', MulaiQuizController::class);
+Route::get('/mulai-kuis/{id}', [MulaiQuizController::class, 'show'])->name('mulai-kuis.show');
