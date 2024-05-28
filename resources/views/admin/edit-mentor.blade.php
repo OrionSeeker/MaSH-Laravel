@@ -15,10 +15,12 @@
                     Nama <input type="text" name="inputName" required value="{{$dataMentor->name}}">
                     Email <input type="text" name="inputEmail" required value="{{$dataMentor->email}}">
                     Password (isi - jika tidak ingin diganti) <input type="text" name="inputPassword" required>
-                    Kelas yang diajarkan
-                    <select class="form-select">
-                        <!-- ini entar isi pake looping, iterasi masing-masing kode kelas -->
-                        <option>Pilih salah satu</option>
+                    Kelas yang diajarkan (biarkan jika tidak ingin diganti)
+                    <select class="form-select" name="inputKelas">
+                        <option value="-">Pilih salah satu</option>
+                        @foreach($daftarKelas as $s)
+                            <option value="{{$s->id}}">{{$s->nama}}</option>
+                        @endforeach
                     </select>
                 </ul>
                 <br>

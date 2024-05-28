@@ -59,7 +59,9 @@
                                 <form action="{{ route('joinkelas.store') }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="inputKelas" value="{{ $dataKelas->id }}">
+                                    @can('isPesertaOrAdmin')
                                     <button type="submit" class="btn btn-primary">Join Class</button>
+                                    @endcan
                                 </form>
                             </div>
                         </div>

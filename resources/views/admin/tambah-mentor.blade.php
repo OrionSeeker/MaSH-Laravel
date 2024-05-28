@@ -15,6 +15,13 @@
                     Email <input type="email" name="inputEmail" required>
                     Role <input type="text" name="inputRole" readonly value="mentor">
                     Password <input type="password" name="inputPassword" required>
+                    Kelas yang diajarkan
+                    <select class="form-select" name="inputKelas">
+                        <option>Pilih salah satu</option>
+                        @foreach($daftarKelas as $s)
+                            <option value="{{$s->id}}">{{$s->nama}}</option>
+                        @endforeach
+                    </select>
                     <br>
                 </ul>
                 <button type="submit" class="btn btn-success">

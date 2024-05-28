@@ -20,14 +20,21 @@
                 <h4 class="col-4">Email</h4>
                 <h4 class="col-8">: {{$dataMentor->email}}</h4>
             </div>
+            <div class="row ml-2">
+                <h4 class="col-4">Kelas yang diajarkan</h4>
+                @php
+                    $ke = App\Models\Kelas::find($dataMentor->id_kelas_ajar);
+                @endphp
+                <h4 class="col-8">: {{$ke->nama}}</h4>
+            </div>
         </div>
 
-        <div class="card-header">
+        <!-- <div class="card-header">
             <h3>Kelas yang diajarkan mentor</h3>
         </div>
         <div class="card-body">
 
-        </div>
+        </div> -->
 
 
     </div>

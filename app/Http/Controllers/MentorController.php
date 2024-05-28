@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Kelas;
 use Illuminate\Support\Facades\Hash;
 
 class MentorController extends Controller
@@ -22,7 +23,8 @@ class MentorController extends Controller
      */
     public function create()
     {
-        return view('admin.tambah-mentor');
+        $daftarKelas = Kelas::all();
+        return view('admin.tambah-mentor', compact('daftarKelas'));
     }
 
     /**
@@ -48,6 +50,7 @@ class MentorController extends Controller
             'email' => $request->inputEmail,
             'password' => Hash::make($request->inputPassword),
             'role' => $request->inputRole,
+            'id_kelas_ajar' => $request->inputKelas
         ]);
 
         return redirect()->route('mentor.index');
@@ -68,7 +71,8 @@ class MentorController extends Controller
     public function edit(string $id)
     {
         $dataMentor = User::where('id', $id)->first();
-        return view('admin.edit-mentor', compact('dataMentor'));
+        $daftarKelas = Kelas::all();
+        return view('admin.edit-mentor', compact('dataMentor', 'daftarKelas'));
     }
 
     /**
@@ -82,6 +86,9 @@ class MentorController extends Controller
         if($request->inputPassword != "-"){
             $mentor->password = $request->inputPassword;
         } 
+        if($request->inputKelas != "-"){
+            $mentor->id_kelas_ajar = $request->inputKelas;
+        }
         $mentor->save();
 
         return redirect()->route('mentor.index');

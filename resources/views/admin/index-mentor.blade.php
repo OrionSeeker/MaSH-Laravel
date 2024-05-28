@@ -24,7 +24,10 @@
                     <td>{{$s->nomorInduk}}</td>
                     <td>{{$s->name}}</td>
                     <td>{{$s->email}}</td>
-                    <td>Sementara kosong</td>
+                    @php
+                        $ke = App\Models\Kelas::find($s->id_kelas_ajar);
+                    @endphp
+                    <td>{{$ke->nama}}</td>
                     <td>
                         <ul class="nav">
                             <a href="{{route('mentor.show', $s->id)}}" class="btn btn-success me-2"><i class="bi bi-person-fill"></i> Show</a>
