@@ -48,6 +48,8 @@ class MateriController extends Controller
             'judul' => $request->inputJudul,
             'url' => $fileName
         ]);
+
+        return redirect()->route('materi.index');
     }
 
     /**

@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Kelas;
 use Auth;
 use App\Models\KelasUser;
+use App\Models\Material;
 
 class JoinKelasController extends Controller
 {
@@ -60,7 +61,9 @@ class JoinKelasController extends Controller
                                 ->exists();
         }
         
-        return view('detail-kelas', compact('dataKelas', 'hasJoined'));
+        $daftarMateri = Material::where('class_id', $id)->get();
+
+        return view('detail-kelas', compact('dataKelas', 'hasJoined', 'daftarMateri'));
     }
 
     /**
