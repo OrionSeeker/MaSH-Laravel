@@ -46,7 +46,7 @@
                         <!-- Prompt to join the class -->
                         <div class="card-body">
                             <div class="ml-2">
-                                <p>You need to join this class to access the materials.</p>
+                                <p>Anda harus join kelas ini untuk bisa melihat materi yang ada!</p>
                                 <form action="{{ route('joinkelas.store') }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="inputKelas" value="{{ $dataKelas->id }}">
@@ -59,7 +59,7 @@
                     <!-- Content for guests only -->
                     <div class="card-body">
                         <div class="ml-2">
-                            <p>Login to access the course materials.</p>
+                            <p>Anda harus login untuk melihat materi dari kelas ini!</p>
                             <a class="btn btn-primary" href="{{ route('login') }}">Login</a>
                         </div>
                     </div>

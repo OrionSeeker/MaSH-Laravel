@@ -51,3 +51,7 @@ Route::resource('joinkelas', JoinKelasController::class);
 Route::get('/detail-kelas/{id}', [JoinKelasController::class, 'show'])->name('detail-kelas.show');
 
 Route::get('/list-kelas', [JoinKelasController::class, 'index'])->name('list-kelas');
+
+use App\Http\Controllers\MateriController;
+
+Route::resource('materi', MateriController::class);
