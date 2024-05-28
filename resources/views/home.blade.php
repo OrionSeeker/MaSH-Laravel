@@ -51,7 +51,12 @@
                     <h3>Kelas yang diikuti</h3>
                 </div>
                 <div class="card-body">
-
+                    @foreach($kelasUser as $s)
+                        @php
+                            $kelas = App\Models\Kelas::find($s->kelas_id);
+                        @endphp
+                    <a href="{{ url('detail-kelas/' . $s->kelas_id) }}">{{$kelas->nama}}</a><br>
+                    @endforeach
                 </div>
 
                 <div class="card-header">

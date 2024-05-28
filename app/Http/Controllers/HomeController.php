@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\KelasUser;
 use Illuminate\Http\Request;
 
 use Auth;
@@ -31,8 +32,9 @@ class HomeController extends Controller
         $user_name = Auth::user()->name;
         $user_email = Auth::user()->email;
         $user_role = Auth::user()->role;
+        $kelasUser = KelasUser::where('user_id', $user_id)->get();
 
-        return view('home', compact('user_id', 'user_nomorInduk', 'user_name', 'user_email', 'user_role'));
+        return view('home', compact('user_id', 'user_nomorInduk', 'user_name', 'user_email', 'user_role', 'kelasUser'));
     }
 
     public function edit()
