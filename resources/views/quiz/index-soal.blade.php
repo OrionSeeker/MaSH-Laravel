@@ -7,8 +7,19 @@
             <h3>Daftar Soal</h3>
         </div>
         <div class="card-body">
-            <a href="{{route ('soal.create')}}" class="btn btn-success"><i class="bi bi-person-fill-add"></i> Tambah Soal</a>
+            <a href="{{route('soal.create')}}" class="btn btn-success"><i class="bi bi-person-fill-add"></i> Tambah Soal</a>
             <br><br>
+            <form action="{{route('soal.index')}}" method="GET" class="d-inline">
+                <label for="kelas_id">Filter by Kelas:</label>
+                <select class="form-select" name="kelas_id" id="kelas_id" onchange="this.form.submit()">
+                    <option value="">Pilih salah satu</option>
+                    @foreach($daftarKelas as $kelas)
+                        <option value="{{$kelas->id}}" {{ request('kelas_id') == $kelas->id ? 'selected' : '' }}>{{$kelas->nama}}</option>
+                    @endforeach
+                </select>
+            </form>
+            <br><br>
+
             <table class="table table-bordered table-striped">
                 <tr>
                     <th>ID</th>
@@ -19,7 +30,6 @@
                     <th>Opsi 3</th>
                     <th>Opsi 4</th>
                     <th>Opsi Benar</th>
-                    <!-- <th>Urutan</th> -->
                     <th>Action</th>
                 </tr>
                 @foreach($dataQuiz as $s)

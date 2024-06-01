@@ -10,11 +10,29 @@ class SoalQuizController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    // public function index()
+    // {
+    //     $dataQuiz = SoalQuiz::all();
+    //     $daftarKelas = Kelas::all();
+    //     return view('quiz.index-soal', compact('dataQuiz', 'daftarKelas'));
+    // }
+    public function index(Request $request)
     {
-        $dataQuiz = SoalQuiz::all();
-        return view('quiz.index-soal', compact('dataQuiz'));
+        $kelas_id = $request->query('kelas_id');
+    
+        if ($kelas_id) {
+            $dataQuiz = SoalQuiz::where('kelas_id', $kelas_id)->get();
+        } else {
+            $dataQuiz = SoalQuiz::all();
+        }
+    
+        $daftarKelas = Kelas::all(); 
+    
+        return view('quiz.index-soal', compact('dataQuiz', 'daftarKelas'));
     }
+    
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -48,7 +66,9 @@ class SoalQuizController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $dataQuiz = SoalQuiz::where('kelas_id', $id)->get();
+        $daftarKelas = Kelas::all();
+        return view('quiz.index-soal', compact('dataQuiz','daftarKelas'));
     }
 
     /**
