@@ -13,13 +13,36 @@
                 <ul class="list-group">
                     <li class="list-group-item">
                         <h4>{{$s->soal}}</h4>
-                        <select class="form-select" name="inputJawaban[{{$s->id}}]" required>
-                            <option value="">Pilih salah satu</option>
-                            <option value="1">{{$s->opsi1}}</option>
-                            <option value="2">{{$s->opsi2}}</option>
-                            <option value="3">{{$s->opsi3}}</option>
-                            <option value="4">{{$s->opsi4}}</option>
-                        </select>
+                        <div class="form-group">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="soal{{$s->id}}_1" name="inputJawaban[{{$s->id}}]" class="custom-control-input" value="1" required>
+                                    <label class="custom-control-label radio-label" for="soal{{$s->id}}_1">A</label>
+                                </div>
+                                <span class="ms-2">{{$s->opsi1}}</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="soal{{$s->id}}_2" name="inputJawaban[{{$s->id}}]" class="custom-control-input" value="2" required>
+                                    <label class="custom-control-label radio-label" for="soal{{$s->id}}_2">B</label>
+                                </div>
+                                <span class="ms-2">{{$s->opsi2}}</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="soal{{$s->id}}_3" name="inputJawaban[{{$s->id}}]" class="custom-control-input" value="3" required>
+                                    <label class="custom-control-label radio-label" for="soal{{$s->id}}_3">C</label>
+                                </div>
+                                <span class="ms-2">{{$s->opsi3}}</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="soal{{$s->id}}_4" name="inputJawaban[{{$s->id}}]" class="custom-control-input" value="4" required>
+                                    <label class="custom-control-label radio-label" for="soal{{$s->id}}_4">D</label>
+                                </div>
+                                <span class="ms-2">{{$s->opsi4}}</span>
+                            </div>
+                        </div>
                     </li>
                 </ul>
                 <br>

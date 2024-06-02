@@ -49,7 +49,7 @@
 
                         <div class="card-body">
                             <div class="ml-2">
-                                <a class="btn btn-primary" href="#" role="button">Ini Ujian</a>
+                                <a class="btn btn-primary" href="{{route('mulai-kuis.show', $dataKelas->id)}}" role="button">Ini Ujian</a>
                             </div>
                         </div>
                     @else
