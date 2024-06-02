@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Kelas;
+use App\Models\KelasUser;
 use Illuminate\Support\Facades\Hash;
 
 class MentorController extends Controller
@@ -53,6 +54,12 @@ class MentorController extends Controller
             'id_kelas_ajar' => $request->inputKelas
         ]);
 
+        KelasUser::create([
+            'user_id' => $nextUserId,
+            'kelas_id' => $request->inputKelas,
+            'role' => $request->inputRole
+        ]);
+
         return redirect()->route('mentor.index');
     }
 
@@ -90,6 +97,14 @@ class MentorController extends Controller
             $mentor->id_kelas_ajar = $request->inputKelas;
         }
         $mentor->save();
+
+        $userkelas = KelasUser::where('user_id', $id)->first();
+        if($request->inputKelas != "-"){
+            $userkelas->kelas_id = $request->inputKelas;
+        }
+        $userkelas->role = "mentor";
+        $userkelas->save();
+
 
         return redirect()->route('mentor.index');
     }

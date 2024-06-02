@@ -74,6 +74,19 @@
                         @endforeach
                 </div>
                 @endcan
+
+                @can('isMentor')
+                <div class="card-header">
+                    <h3>Kelas yang diajarkan</h3>
+                </div>
+                <div class="card-body">
+                    @php
+                        $mentorKelas = App\Models\Kelas::where('id', Auth::user()->id_kelas_ajar)->first();
+                    @endphp
+
+                    <a href="{{ url('detail-kelas/' . $mentorKelas->id) }}">{{ $mentorKelas->nama }}</a><br>
+                </div>
+                @endcan
             </div>
         </div>
     </div>
