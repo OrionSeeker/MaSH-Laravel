@@ -68,7 +68,8 @@
                             $kelas = App\Models\Kelas::find($s->kelas_id);
                         @endphp
                         @if($s->skor>=30)
-                        <a href="{{route('genCerti.buat', ['name' => $user_name, 'kelas' => $kelas->nama, 'skor' => $s->skor])}}">{{$kelas->nama}}</a>
+                        <!-- <a href="{{route('genCerti.buat', ['name' => $user_name, 'kelas' => $kelas->nama, 'skor' => $s->skor])}}">{{$kelas->nama}}</a> -->
+                        <a href="{{ url('certificate/'. $user_name. '/' . $kelas->nama.'/'. $s->skor) }}">{{$kelas->nama}}</a>
                         @endif
                         @endforeach
                 </div>

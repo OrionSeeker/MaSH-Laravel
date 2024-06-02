@@ -46,12 +46,11 @@ class CertificateController extends Controller
         imagepng($img);
 
         // simpen sertifnya
-        $outputPath = public_path("assets/sertifikat/{$name}/{$kelas}/{$skor}.png");
+        $outputPath = public_path("assets/sertifikat/{$name}{$kelas}{$skor}.png");
         imagepng($img, $outputPath);
 
         // kosongin memori
         imagedestroy($img);
-        return response()->download($outputPath)->deleteFileAfterSend(true);
     }
 
     public function buat($nama, $kelas, $skor){
