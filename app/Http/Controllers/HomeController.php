@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\KelasUser;
+use App\Models\Sertifikat;
 use Illuminate\Http\Request;
 
 use Auth;
@@ -33,8 +34,9 @@ class HomeController extends Controller
         $user_email = Auth::user()->email;
         $user_role = Auth::user()->role;
         $kelasUser = KelasUser::where('user_id', $user_id)->get();
+        $sertifikatUser = Sertifikat::where('user_id', $user_id)->whereNotNull('url')->get();
 
-        return view('home', compact('user_id', 'user_nomorInduk', 'user_name', 'user_email', 'user_role', 'kelasUser'));
+        return view('home', compact('user_id', 'user_nomorInduk', 'user_name', 'user_email', 'user_role', 'kelasUser', 'sertifikatUser'));
     }
 
     public function edit()

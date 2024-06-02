@@ -63,7 +63,12 @@
                     <h3>Sertifikat yang dimiliki</h3>
                 </div>
                 <div class="card-body">
-
+                    @foreach($sertifikatUser as $s)
+                        @php
+                            $kelas = App\Models\Kelas::find($s->kelas_id);
+                        @endphp
+                        <a href="{{route('genCerti.buat', $user_name)}}">{{$kelas->nama}}</a>
+                    @endforeach
                 </div>
                 @endcan
             </div>
