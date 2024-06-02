@@ -3,8 +3,10 @@
 @section('content')
 <div class="container">
     <div class="alert alert-warning">
-        <h4>Anda sudah pernah mengerjakan ujian ini!</h4>
+        <!-- <h4>Anda sudah pernah mengerjakan ujian ini!</h4> -->
+
         @php
+            echo $kalimat;
             $namaKelas = App\Models\Kelas::find($dataKelas->id);
         @endphp
         <p>Nama Kelas: {{$namaKelas->nama}}</p>

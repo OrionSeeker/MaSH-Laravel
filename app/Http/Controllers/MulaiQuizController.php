@@ -62,7 +62,12 @@ class MulaiQuizController extends Controller
                 'skor' => $totalSkor,
                 'url' => $url
             ]);
-        return redirect()->route('detail-kelas.show', ['id' => $request->inputKelas]);
+            $kalimat = '<h4>Skor ujian anda</h4>';
+
+            $dataKelas = Kelas::where('id', $request->inputKelas)->first();
+            $skorQuiz = Sertifikat::where('kelas_id', $request->inputKelas)->where('user_id', $userID)->first();
+            return view('quiz.sudahquiz', compact('dataKelas', 'skorQuiz', 'kalimat'));
+        // return redirect()->route('detail-kelas.show', ['id' => $request->inputKelas]);
         // return redirect()->route('mulai-kuis.hasil', ['id' => $request->inputKelas] );
 
         // $soal = SoalQuiz::find('quiz-id', $request->inputKelas);
@@ -84,8 +89,9 @@ class MulaiQuizController extends Controller
         $quizAttempt = MulaiQuiz::where('user_id', $userId)->where('quiz_id', $id)->exists();
 
         $skorQuiz = Sertifikat::where('kelas_id', $id)->where('user_id', $userId)->first();
+        $kalimat = '<h4>Anda sudah pernah mengerjakan ujian ini!</h4>';
         if ($quizAttempt) {
-            return view('quiz.sudahquiz', compact('dataKelas', 'skorQuiz'));
+            return view('quiz.sudahquiz', compact('dataKelas', 'skorQuiz', 'kalimat'));
         }
 
         // return view('detail-kelas', compact('dataKelas'));
