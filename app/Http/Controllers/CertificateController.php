@@ -7,48 +7,55 @@ use Illuminate\Support\Facades\Storage;
 
 class CertificateController extends Controller
 {
-    public function generateCertificate($name)
+    public function generateCertificate($name, $kelas, $skor)
     {
-        // Load the certificate template
+        // load template sertifikat
         $templatePath = public_path('assets/sertifikat/certificate_template.png');
         $img = imagecreatefrompng($templatePath);
 
-        // Set font settings
+        // font yang dipake
         $font = public_path('assets/sertifikat/amsterdam-four.ttf');
         // $fontCourse = public_path('assets/sertifikat/OpenSans-SemiBold.ttf');
         $fontCourse = public_path('assets/sertifikat/Ubuntu-R.ttf');
         $fontSize = 80;
         $fontColor = imagecolorallocate($img, 0, 0, 0); // Black
 
-        // Calculate text position (adjust as needed)
-        $textX = 900;
+        // posisi text
+        $textX = 600;
         $textY = 700;
         $textXCourse = 800;
         $textYCourse = 950;
         $textXdate = 925;
         $textYdate = 1315;
+        $textXskor = 925;
+        $textYskor = 1130;
 
-        // Add dynamic text to the certificate
+
+        $tanggal = date('d M Y'); 
+        // masukin teks
         imagettftext($img, $fontSize, 0, $textX, $textY, $fontColor, $font, $name);
         
-        imagettftext($img, 50, 0, $textXCourse, $textYCourse, $fontColor, $fontCourse, "Pemrograman Berorientasi Objek");
+        imagettftext($img, 50, 0, $textXCourse, $textYCourse, $fontColor, $fontCourse, $kelas);
 
-        imagettftext($img, 20, 0, $textXdate, $textYdate, $fontColor, $fontCourse, "22 Mei 2024");
+        imagettftext($img, 30, 0, $textXskor, $textYskor, $fontColor, $fontCourse, $skor);
 
-        // Set the content type and send the image to the browser
+        imagettftext($img, 20, 0, $textXdate, $textYdate, $fontColor, $fontCourse, $tanggal);
+
+        // atur tipe file yang ditampilin dibrowser
         header('Content-Type: image/png');
         imagepng($img);
 
-        // Or save the generated certificate image
-        $outputPath = public_path("assets/sertifikat/{$name}.png");
+        // simpen sertifnya
+        $outputPath = public_path("assets/sertifikat/{$name}/{$kelas}/{$skor}.png");
         imagepng($img, $outputPath);
 
-        // Free up memory
+        // kosongin memori
         imagedestroy($img);
+        return response()->download($outputPath)->deleteFileAfterSend(true);
     }
 
-    public function buat($nama){
+    public function buat($nama, $kelas, $skor){
         $certiController = new CertificateController;
-        $certiController->generateCertificate($nama);
+        $certiController->generateCertificate($nama, $kelas, $skor);
     }
 }

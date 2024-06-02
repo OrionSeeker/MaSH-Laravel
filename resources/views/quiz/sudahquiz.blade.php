@@ -16,7 +16,7 @@
             @php
                 $namaUser = Auth::user()->name;
             @endphp
-            <a class="btn btn-primary" href="{{ route('genCerti.buat', ['name' => $namaUser]) }}" role="button">Ambil Sertifikat</a>
+            <a class="btn btn-primary" href="{{ route('genCerti.buat', ['name' => $namaUser, 'kelas' => $namaKelas->nama, 'skor' => $skorQuiz->skor]) }}" role="button">Ambil Sertifikat</a>
         @else
             <p>Sayang sekali anda tidak lulus kelas ini dan tidak dapat mengambil sertifikat!</p>
         @endif

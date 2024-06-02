@@ -42,7 +42,7 @@ Route::post('/profile/edit', [HomeController::class, 'update'])->name('profile.u
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\KelasController;
 
-Route::get('/certificate/{name}', [CertificateController::class, 'generateCertificate'])->name('genCerti.buat');
+Route::get('/certificate/{name}/{kelas}/{skor}', [CertificateController::class, 'generateCertificate'])->name('genCerti.buat');
 
 Route::resource('kelas', KelasController::class)->middleware('can:isAdmin');
 

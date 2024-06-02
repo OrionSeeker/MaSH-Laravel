@@ -67,8 +67,10 @@
                         @php
                             $kelas = App\Models\Kelas::find($s->kelas_id);
                         @endphp
-                        <a href="{{route('genCerti.buat', $user_name)}}">{{$kelas->nama}}</a>
-                    @endforeach
+                        @if($s->skor>=30)
+                        <a href="{{route('genCerti.buat', ['name' => $user_name, 'kelas' => $kelas->nama, 'skor' => $s->skor])}}">{{$kelas->nama}}</a>
+                        @endif
+                        @endforeach
                 </div>
                 @endcan
             </div>
