@@ -50,6 +50,10 @@
                         <div class="card-body">
                             <div class="ml-2">
                                 <a class="btn btn-primary" href="{{route('mulai-kuis.show', $dataKelas->id)}}" role="button">Ini Ujian</a>
+                                @php
+                                    $namaUser = Auth::user()->name;
+                                @endphp
+                                <a class="btn btn-primary" href="{{route('genCerti.buat', $namaUser)}}" role="button">Generate Sertifikat</a>
                             </div>
                         </div>
                     @else
@@ -61,7 +65,7 @@
                                     @csrf
                                     <input type="hidden" name="inputKelas" value="{{ $dataKelas->id }}">
                                     @can('isPesertaOrAdmin')
-                                    <button type="submit" class="btn btn-primary">Join Class</button>
+                                    <button type="submit" class="btn btn-primary">Join Kelas</button>
                                     @endcan
                                 </form>
                             </div>

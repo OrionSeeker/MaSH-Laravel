@@ -7,6 +7,7 @@ use App\Models\Kelas;
 use App\Models\User;
 use App\Models\SoalQuiz;
 use App\Models\MulaiQuiz;
+use App\Models\Sertifikat;
 use Auth;
 class MulaiQuizController extends Controller
 {
@@ -45,8 +46,25 @@ class MulaiQuizController extends Controller
                 'soal_id' => $soalId,
                 'skor' => $skor
             ]);
+
+            $totalSkor = MulaiQuiz::where('user_id', $userID)->where('quiz_id', $request->inputKelas)->sum('skor');
+
+            $url = null;
+            if($totalSkor>=20){
+                // $certiController = new CertificateController;
+                // $certiController->generateCertificate(Auth::user()->name);
+                $url = 'assets/sertifikat/' . Auth::user()->name;
+            }
+    
+            Sertifikat::create([
+                'user_id' => $userID,
+                'kelas_id' => $request->inputKelas,
+                'skor' => $totalSkor,
+                'url' => $url
+            ]);
         }
         return redirect()->route('detail-kelas.show', ['id' => $request->inputKelas]);
+        // return redirect()->route('mulai-kuis.hasil', ['id' => $request->inputKelas] );
 
         // $soal = SoalQuiz::find('quiz-id', $request->inputKelas);
 
@@ -65,8 +83,10 @@ class MulaiQuizController extends Controller
         $userId = auth()->id();
         $dataKelas = Kelas::where('id', $id)->first();
         $quizAttempt = MulaiQuiz::where('user_id', $userId)->where('quiz_id', $id)->exists();
+
+        $skorQuiz = Sertifikat::where('kelas_id', $id)->first();
         if ($quizAttempt) {
-            return view('quiz.sudahquiz', compact('dataKelas'));
+            return view('quiz.sudahquiz', compact('dataKelas', 'skorQuiz'));
         }
 
         // return view('detail-kelas', compact('dataKelas'));
@@ -98,4 +118,25 @@ class MulaiQuizController extends Controller
     {
         //
     }
+
+    // public function hasil(string $id){
+    //     $userId = auth()->id();
+    //     $dataKelas = Kelas::where('id', $id)->first();
+    //     $totalSkor = MulaiQuiz::where('user_id', $userId)->where('kelas_id', $id)->sum('skor');
+
+    //     $url = null;
+    //     if($totalSkor>=70){
+    //         $certiController = new CertificateController;
+    //         $certiController->generateCertificate(Auth::user()->name);
+    //         $url = 'certificate/' . Auth::user()->name;
+    //     }
+
+    //     Sertifikat::create([
+    //         'user_id' => $userId,
+    //         'kelas_id' => $id,
+    //         'skor' => $totalSkor,
+    //         'url' => $url
+    //     ]);
+    //     return redirect()->route('detail-kelas.show', $id);
+    // }
 }

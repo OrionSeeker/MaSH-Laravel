@@ -42,7 +42,7 @@ Route::post('/profile/edit', [HomeController::class, 'update'])->name('profile.u
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\KelasController;
 
-Route::get('/certificate/{name}', [CertificateController::class, 'generateCertificate']);
+Route::get('/certificate/{name}', [CertificateController::class, 'generateCertificate'])->name('genCerti.buat');
 
 Route::resource('kelas', KelasController::class)->middleware('can:isAdmin');
 
@@ -62,3 +62,5 @@ Route::resource('soal', SoalQuizController::class);
 use App\Http\Controllers\MulaiQuizController;
 Route::resource('mulai-kuis', MulaiQuizController::class);
 Route::get('/mulai-kuis/{id}', [MulaiQuizController::class, 'show'])->name('mulai-kuis.show');
+
+Route::post('/hasil-quiz/{id}', [MulaiQuizController::class, 'hasil'])->name('mulai-kuis.hasil');

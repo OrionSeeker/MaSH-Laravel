@@ -46,4 +46,9 @@ class CertificateController extends Controller
         // Free up memory
         imagedestroy($img);
     }
+
+    public function buat($nama){
+        $certiController = new CertificateController;
+        $certiController->generateCertificate($nama);
+    }
 }
