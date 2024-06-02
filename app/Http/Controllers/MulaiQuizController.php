@@ -62,7 +62,13 @@ class MulaiQuizController extends Controller
      */
     public function show(string $id)
     {
+        $userId = auth()->id();
         $dataKelas = Kelas::where('id', $id)->first();
+        $quizAttempt = MulaiQuiz::where('user_id', $userId)->where('quiz_id', $id)->exists();
+        if ($quizAttempt) {
+            return view('quiz.sudahquiz', compact('dataKelas'));
+        }
+
         // return view('detail-kelas', compact('dataKelas'));
         $dataUser = Auth::user();
         $dataSoal = SoalQuiz::where('kelas_id', $dataKelas->id)->get();
