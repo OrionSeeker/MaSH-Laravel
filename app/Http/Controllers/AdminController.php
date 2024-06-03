@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\KelasUser;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Kelas;
 
 class AdminController extends Controller
 {
@@ -49,6 +51,16 @@ class AdminController extends Controller
             'password' => Hash::make($request->inputPassword),
             'role' => $request->inputRole,
         ]);
+        
+        $daftarKelas = Kelas::all();
+        foreach($daftarKelas as $d){
+            KelasUser::create([
+                'user_id' => $nextUserId,
+                'kelas_id' => $d->id,
+                'role' => "admin"
+            ]);
+        }
+
 
         return redirect()->route('admin.index');
     }
