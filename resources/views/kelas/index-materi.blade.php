@@ -8,6 +8,18 @@
         </div>
         <div class="card-body">
             <a href="{{route ('materi.create')}}" class="btn btn-success"><i class="bi bi-person-fill-add"></i> Tambah Material</a>
+
+            <form action="{{route('materi.index')}}" method="GET" class="d-inline">
+                <br>
+                <label for="kelas_id">Filter by Kelas:</label>
+                <select class="form-select" name="kelas_id" id="kelas_id" onchange="this.form.submit()">
+                    <option value="">Pilih salah satu</option>
+                    @foreach($daftarKelas as $kelas)
+                        <option value="{{$kelas->id}}" {{ request('kelas_id') == $kelas->id ? 'selected' : '' }}>{{$kelas->nama}}</option>
+                    @endforeach
+                </select>
+            </form>
+
             <br><br>
             <table class="table table-bordered table-striped">
                 <tr>

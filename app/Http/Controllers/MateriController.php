@@ -11,10 +11,17 @@ class MateriController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $materiKelas = Material::all();
-        return view('kelas.index-materi', compact('materiKelas'));
+        $kelas_id = $request->query('kelas_id');
+        if ($kelas_id) {
+            $materiKelas = Material::where('class_id', $kelas_id)->get();
+        } else {
+            $materiKelas = Material::all();
+        }
+        
+        $daftarKelas = Kelas::all();
+        return view('kelas.index-materi', compact('materiKelas', 'daftarKelas'));
     }
 
     /**
@@ -57,7 +64,9 @@ class MateriController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $materiKelas = Material::where('class_id', $id)->get();
+        $daftarKelas = Kelas::all();
+        return view('kelas.index-materi', compact('materiKelas','daftarKelas'));
     }
 
     /**
