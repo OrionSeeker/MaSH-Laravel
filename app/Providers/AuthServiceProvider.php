@@ -37,5 +37,9 @@ class AuthServiceProvider extends ServiceProvider
             return $user->role === 'peserta' || $user->role === 'admin';
         });
 
+        Gate::define('isMentorOrAdmin', function ($user) {
+            return $user->role === 'mentor' || $user->role === 'admin';
+        });
+
     }
 }

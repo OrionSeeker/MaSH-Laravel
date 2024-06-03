@@ -56,6 +56,9 @@
                         <li>
                             <a href="{{url('kelola-user')}}" class="nav-link">Kelola User</a>
                         </li>
+                        <li>
+                            <a href="{{url('kelas')}}" class="nav-link">Kelola Kelas</a>
+                        </li>
                         @endcan
                         <!-- <li>
                             <a href="{{url('peserta')}}" class="nav-link">Atur peserta</a>

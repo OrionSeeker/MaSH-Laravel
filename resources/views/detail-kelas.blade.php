@@ -23,8 +23,10 @@
                     @if($hasJoined)
                         <!-- Content for users who have joined the class -->
                         <div class="card-body">
-                            <a href="{{route('materi.show', $dataKelas->id)}}">Edit Materi</a>
-                            <a href="{{route('soal.show', $dataKelas->id)}}">Edit soal ujian</a>
+                            @can('isMentorOrAdmin')
+                            <a href="{{route('materi.show', $dataKelas->id)}}" class="btn btn-primary">Edit Materi</a>
+                            <a href="{{route('soal.show', $dataKelas->id)}}" class="btn btn-primary">Edit soal ujian</a>
+                            @endcan
                             @foreach($daftarMateri as $materi)
                                 <div class="ml-2 mb-3">
                                     <h4>{{ $materi->judul }}</h4>
