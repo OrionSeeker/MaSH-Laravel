@@ -55,9 +55,9 @@ Route::get('/list-kelas', [JoinKelasController::class, 'index'])->name('list-kel
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\SoalQuizController;
 
-Route::resource('materi', MateriController::class);
+Route::resource('materi', MateriController::class)->middleware('can:isMentorOrAdmin');
 
-Route::resource('soal', SoalQuizController::class);
+Route::resource('soal', SoalQuizController::class)->middleware('can:isMentorOrAdmin');
 
 use App\Http\Controllers\MulaiQuizController;
 Route::resource('mulai-kuis', MulaiQuizController::class);

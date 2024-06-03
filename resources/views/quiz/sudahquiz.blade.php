@@ -11,7 +11,9 @@
         @endphp
         <p>Nama Kelas: {{$namaKelas->nama}}</p>
         <p>Skor anda: {{$skorQuiz->skor}}</p>
-        @if($skorQuiz->skor >= 30)
+        @if(Auth::user()->role=='mentor' || Auth::user()->role=='admin')
+            <br> 
+        @elseif($skorQuiz->skor >= 30)
             <p>Anda berhak mengambil sertifikat anda!</p>
             @php
                 $namaUser = Auth::user()->name;

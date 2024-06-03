@@ -24,16 +24,24 @@
                         <!-- Content for users who have joined the class -->
                         <div class="card-body">
                             @can('isMentorOrAdmin')
-                            <a href="{{route('materi.show', $dataKelas->id)}}" class="btn btn-primary">Edit Materi</a>
-                            <a href="{{route('soal.show', $dataKelas->id)}}" class="btn btn-primary">Edit soal ujian</a>
+                            <a href="{{route('materi.show', $dataKelas->id)}}" class="btn btn-primary"><i class="bi bi-pencil"></i> Edit Materi</a>
+                            <a href="{{route('soal.show', $dataKelas->id)}}" class="btn btn-primary"><i class="bi bi-pencil"></i> Edit soal ujian</a><br><br>
                             @endcan
                             @foreach($daftarMateri as $materi)
                                 <div class="ml-2 mb-3">
-                                    <h4>{{ $materi->judul }}</h4>
-                                    @if($materi->tipe == 'PDF' || $materi->tipe == 'PPT')
-                                        <a href="{{ asset('/assets/materi-kelas/' . $materi->url) }}" download><i class="bi bi-file-earmark-pdf"></i>{{ $materi->judul }}</a>
+                                    @if($materi->tipe == 'Judul')
+                                        <h3 style="font-weight: bold;">{{ $materi->judul }}</h3>
+                                    @elseif($materi->tipe == 'PDF')
+                                        <div style="padding-left: 2.0rem";>
+                                            <a href="{{ asset('/assets/materi-kelas/' . $materi->url) }}" style="font-size:large;" download><i class="bi bi-file-earmark-pdf"></i>{{ $materi->judul }}</a>
+                                        </div>
+                                    @elseif($materi->tipe == 'PPT')
+                                        <div style="padding-left: 2.0rem";>
+                                            <a href="{{ asset('/assets/materi-kelas/' . $materi->url) }}" style="font-size:large;" download><i class="bi bi-filetype-ppt"></i>{{ $materi->judul }}</a>
+                                        </div>
                                     @elseif($materi->tipe == 'Video')
-                                        <div class="embed-responsive embed-responsive-16by9">
+                                        <div class="embed-responsive embed-responsive-16by9" style="padding-left: 2.0rem">
+                                            <label style="font-size:large">{{$materi->judul}}</label><br>
                                             <iframe class="embed-responsive-item" src="{{ $materi->url }}" allowfullscreen></iframe>
                                         </div>
                                     @endif
@@ -52,14 +60,14 @@
 
                         <div class="card-body">
                             <div class="ml-2">
-                                <a class="btn btn-primary" href="{{route('mulai-kuis.show', $dataKelas->id)}}" role="button">Ini Ujian</a>
+                                <a class="btn btn-primary" href="{{route('mulai-kuis.show', $dataKelas->id)}}" role="button"><i class="bi bi-clipboard-check-fill"></i> Ujian</a>
                                 @php
                                     $namaUser = Auth::user()->name;
                                     $skorUser = App\Models\Sertifikat::where('user_id', Auth::user()->id)->where('kelas_id', $dataKelas->id)->first();
                                 @endphp
-                                @if($skorUser)
+                                @if($skorUser && Auth::user()->role!='admin' && Auth::user()->role!='mentor')
                                     @if($skorUser->skor >= 30)
-                                    <a class="btn btn-primary" href="{{route('genCerti.buat', [$namaUser, $dataKelas->nama, $skorUser->skor])}}" role="button">Lihat Sertifikat</a>
+                                    <a class="btn btn-primary" href="{{route('genCerti.buat', [$namaUser, $dataKelas->nama, $skorUser->skor])}}" role="button"> <i class="bi bi-image"></i> Lihat Sertifikat</a>
                                     @endif
                                 @endif
                             </div>
