@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- <title>{{ config('app.name', 'Mataram Skill Hub') }}</title> -->
-    <title>Mataram Skill Hub</title>
+    <title>IT Skill Hub</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -26,7 +26,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/beranda') }}">
                     <!-- {{ config('app.name', 'Mataram Study Hub') }} -->
-                    Mataram Skill Hub
+                    IT Skill Hub
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
