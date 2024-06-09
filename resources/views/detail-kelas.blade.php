@@ -66,7 +66,7 @@
                                     $skorUser = App\Models\Sertifikat::where('user_id', Auth::user()->id)->where('kelas_id', $dataKelas->id)->first();
                                 @endphp
                                 @if($skorUser && Auth::user()->role!='admin' && Auth::user()->role!='mentor')
-                                    @if($skorUser->skor >= 30)
+                                    @if($skorUser->skor >= 75)
                                     <a class="btn btn-primary" href="{{route('genCerti.buat', [$namaUser, $dataKelas->nama, $skorUser->skor])}}" role="button"> <i class="bi bi-image"></i> Lihat Sertifikat</a>
                                     @endif
                                 @endif

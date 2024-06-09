@@ -38,7 +38,7 @@ class MulaiQuizController extends Controller
             $soal = SoalQuiz::find($soalId);
 
             // Cek jawabannya bener atau engga
-            $skor = ($soal && $soal->opsibenar == $jawaban) ? 10 : 0;
+            $skor = ($soal && $soal->opsibenar == $jawaban) ? 1 : 0;
 
             MulaiQuiz::create([
                 'user_id' => $userID,
@@ -48,9 +48,11 @@ class MulaiQuizController extends Controller
             ]);
         }
             $totalSkor = MulaiQuiz::where('user_id', $userID)->where('quiz_id', $request->inputKelas)->sum('skor');
+            $jumlahSoal = SoalQuiz::where('kelas_id', $request->inputKelas)->count('id');
+            $totalSkor = $totalSkor / $jumlahSoal * 100;
 
             $url = null;
-            if($totalSkor>=20){
+            if($totalSkor>=75){
                 // $certiController = new CertificateController;
                 // $certiController->generateCertificate(Auth::user()->name);
                 $url = 'assets/sertifikat/' . Auth::user()->name;

@@ -13,7 +13,7 @@
         <p>Skor anda: {{$skorQuiz->skor}}</p>
         @if(Auth::user()->role=='mentor' || Auth::user()->role=='admin')
             <br> 
-        @elseif($skorQuiz->skor >= 30)
+        @elseif($skorQuiz->skor >= 75)
             <p>Anda berhak mengambil sertifikat anda!</p>
             @php
                 $namaUser = Auth::user()->name;
