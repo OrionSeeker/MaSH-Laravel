@@ -63,7 +63,9 @@ class JoinKelasController extends Controller
         
         $daftarMateri = Material::where('class_id', $id)->get();
 
-        return view('detail-kelas', compact('dataKelas', 'hasJoined', 'daftarMateri'));
+        $daftarMentor = KelasUser::where('kelas_id', $id)->where('role', "mentor")->get();
+
+        return view('detail-kelas', compact('dataKelas', 'hasJoined', 'daftarMateri', 'daftarMentor'));
     }
 
     /**

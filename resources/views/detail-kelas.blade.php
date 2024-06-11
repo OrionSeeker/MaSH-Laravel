@@ -10,6 +10,13 @@
                 <div class="card-body">
                     <div>
                         <p>{{$dataKelas->deskripsi}}</p>
+                        <label>Daftar Mentor:</label><br>
+                        @foreach($daftarMentor as $d)
+                        @php
+                            $nama = app\models\User::where('id', $d->user_id)->first();
+                        @endphp
+                        <label>- {{$nama->name}}</label><br>
+                        @endforeach
                     </div>
                 </div>
             </div>
