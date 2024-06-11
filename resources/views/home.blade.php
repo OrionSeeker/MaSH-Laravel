@@ -87,6 +87,88 @@
                     <a href="{{ url('detail-kelas/' . $mentorKelas->id) }}">{{ $mentorKelas->nama }}</a><br>
                 </div>
                 @endcan
+
+                @can('isAdmin')
+                <div class="card-header">
+                    <h3>Statistik</h3>
+                </div>
+                <!-- ini statistik jumlah peserta -->
+                <div class="chart-container" style="display: flex; justify-content: center; align-items: center;">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+                    <canvas id="chartPeserta" style="width:100%;max-width:600px"></canvas>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                        const xValues = @json($namaKelas);
+                        const yValues = @json($jumlahPeserta);
+                        const barColors = ["red", "green", "blue", "orange", "brown", "purple", "grey"];
+
+                        new Chart("chartPeserta", {
+                            type: "bar",
+                            data: {
+                                labels: xValues,
+                                datasets: [{
+                                    backgroundColor: barColors.slice(0, xValues.length),
+                                    data: yValues
+                                }]
+                            },
+                            options: {
+                                legend: { display: false },
+                                title: {
+                                    display: true,
+                                    text: "Jumlah Peserta per Kelas"
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    });
+                    </script>
+                </div>
+
+                <!-- ini statistik jumlah mentor -->
+                <div class="chart-container" style="display: flex; justify-content: center; align-items: center;">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+                    <canvas id="chartMentor" style="width:100%;max-width:600px"></canvas>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                        const xValues = @json($namaKelas);
+                        const yValues = @json($jumlahMentor);
+                        const barColors = ["red", "green", "blue"];
+
+                        new Chart("chartMentor", {
+                            type: "bar",
+                            data: {
+                                labels: xValues,
+                                datasets: [{
+                                    backgroundColor: barColors.slice(0, xValues.length),
+                                    data: yValues
+                                }]
+                            },
+                            options: {
+                                legend: { display: false },
+                                title: {
+                                    display: true,
+                                    text: "Jumlah Mentor per Kelas"
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    });
+                    </script>
+                </div>
+                @endcan
+
             </div>
         </div>
     </div>

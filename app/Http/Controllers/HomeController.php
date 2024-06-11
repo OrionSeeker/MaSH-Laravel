@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\KelasUser;
 use App\Models\Sertifikat;
+use App\Models\Kelas;
 use Illuminate\Http\Request;
 
 use Auth;
@@ -36,7 +37,19 @@ class HomeController extends Controller
         $kelasUser = KelasUser::where('user_id', $user_id)->get();
         $sertifikatUser = Sertifikat::where('user_id', $user_id)->whereNotNull('url')->get();
 
-        return view('home', compact('user_id', 'user_nomorInduk', 'user_name', 'user_email', 'user_role', 'kelasUser', 'sertifikatUser'));
+        // hanya untuk admin
+        $daftarKelas = Kelas::all();
+        $namaKelas = [];
+        $jumlahPeserta = [];
+
+        foreach($daftarKelas as $kelas){
+            $namaKelas[] = $kelas->nama;
+            $jumlahPeserta[] = KelasUser::where('kelas_id', $kelas->id)->where('role', "peserta")->count();
+            $jumlahMentor[] = KelasUser::where('kelas_id', $kelas->id)->where('role', "mentor")->count();
+        }
+
+
+        return view('home', compact('user_id', 'user_nomorInduk', 'user_name', 'user_email', 'user_role', 'kelasUser', 'sertifikatUser', 'namaKelas', 'jumlahPeserta', 'jumlahMentor'));
     }
 
     public function edit()
