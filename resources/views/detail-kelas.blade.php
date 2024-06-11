@@ -28,7 +28,6 @@
 
                 @auth
                     @if($hasJoined)
-                        <!-- Content for users who have joined the class -->
                         <div class="card-body">
                             @can('isMentorOrAdmin')
                             <a href="{{route('materi.show', $dataKelas->id)}}" class="btn btn-primary"><i class="bi bi-pencil"></i> Edit Materi</a>
@@ -67,7 +66,11 @@
 
                         <div class="card-body">
                             <div class="ml-2">
-                                <a class="btn btn-primary" href="{{route('mulai-kuis.show', $dataKelas->id)}}" role="button"><i class="bi bi-clipboard-check-fill"></i> Ujian</a>
+                                @if(!$udahUjian)
+                                    <button class="btn btn-primary" onclick="confirmExam({{$dataKelas->id}})"><i class="bi bi-clipboard-check-fill"></i> Ujian</button>
+                                @else
+                                    <a class="btn btn-primary" href="{{route('mulai-kuis.show', $dataKelas->id)}}" role="button"><i class="bi bi-clipboard-check-fill"></i> Ujian</a>
+                                @endif
                                 @php
                                     $namaUser = Auth::user()->name;
                                     $skorUser = App\Models\Sertifikat::where('user_id', Auth::user()->id)->where('kelas_id', $dataKelas->id)->first();
@@ -80,7 +83,6 @@
                             </div>
                         </div>
                     @else
-                        <!-- Prompt to join the class -->
                         <div class="card-body">
                             <div class="ml-2">
                                 <p>Anda harus join kelas ini untuk bisa melihat materi yang ada!</p>
@@ -95,7 +97,7 @@
                         </div>
                     @endif
                 @else
-                    <!-- Content for guests only -->
+                    <!-- guest only -->
                     <div class="card-body">
                         <div class="ml-2">
                             <p>Anda harus login untuk melihat materi dari kelas ini!</p>
@@ -107,4 +109,14 @@
         </div>
     </div>
 </div>
+
+<script>
+    function confirmExam(classId) {
+        const confirmation = confirm("Apakah Anda yakin ingin memulai ujian? Skor minimal adalah 75% dan Anda hanya memiliki 1 kali percobaan.");
+        if (confirmation) {
+            window.location.href = '/mulai-kuis/' + classId;
+        }
+    }
+</script>
+
 @endsection
