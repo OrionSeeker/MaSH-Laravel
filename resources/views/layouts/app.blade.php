@@ -36,7 +36,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li>
-                            <a href="{{url('list-kelas')}}" class="nav-link">Daftar Kelas</a>
+                            <a href="{{url('list-kelas')}}" class="nav-link">List Kelas</a>
                         </li>
                         <li>
                         <div class="dropdown hover-dropdown">
@@ -46,7 +46,7 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <li><a class="dropdown-item" href="mailto:admin@mataram-sh.com"><i class="bi bi-envelope-at-fill"></i> Email</a></li>
                                 <li><a class="dropdown-item" href="https://wa.me/+6281917921234"><i class="bi bi-whatsapp"></i> Whatsapp</a></li>
-                                <li><a class="dropdown-item" href="https://instagram.com/michael.eff"><i class="bi bi-instagram"></i> Instagram</a></li>
+                                <li><a class="dropdown-item" href="https://instagram.com/"><i class="bi bi-instagram"></i> Instagram</a></li>
                                 <li><a class="dropdown-item" href="https://twitter.com"><i class="bi bi-twitter"></i> Twitter</a></li>
                                 <li><a class="dropdown-item" href="https://facebook.com"><i class="bi bi-facebook"></i> Facebook</a></li>
                             </ul>
