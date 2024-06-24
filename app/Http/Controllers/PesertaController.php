@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Models\KelasUser;
+use App\Models\Sertifikat;
 
 class PesertaController extends Controller
 {
@@ -60,7 +62,9 @@ class PesertaController extends Controller
     public function show(string $id)
     {
         $dataPeserta = User::where('id', $id)->first();
-        return view('admin.show-peserta', compact('dataPeserta'));
+        $kelasUser = KelasUser::where('user_id', $id)->get();
+        $sertifikatUser = Sertifikat::where('user_id', $id)->whereNotNull('url')->get();
+        return view('admin.show-peserta', compact('dataPeserta', 'kelasUser', 'sertifikatUser'));
     }
 
     /**

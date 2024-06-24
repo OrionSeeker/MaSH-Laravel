@@ -26,14 +26,26 @@
             <h3>Kelas yang diikuti Peserta</h3>
         </div>
         <div class="card-body">
-
+            @foreach($kelasUser as $s)
+                @php
+                    $kelas = App\Models\Kelas::find($s->kelas_id);
+                @endphp
+                <a href="{{ url('detail-kelas/' . $s->kelas_id) }}">{{$kelas->nama}}</a><br>
+            @endforeach
         </div>
 
         <div class="card-header">
             <h3>Sertifikat yang dimiliki Peserta</h3>
         </div>
         <div class="card-body">
-
+            @foreach($sertifikatUser as $s)
+                @php
+                    $kelas = App\Models\Kelas::find($s->kelas_id);
+                @endphp
+                @if($s->skor>=30)
+                    <a href="{{ url('certificate/'. $dataPeserta->name. '/' . $kelas->nama.'/'. $s->skor) }}">{{$kelas->nama}}</a>
+                @endif
+            @endforeach
         </div>
 
 
