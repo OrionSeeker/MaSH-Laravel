@@ -154,6 +154,13 @@ footer .credit a{
     font-size: 1.5rem;
     color: #999;
 }
+.description-column {
+    max-width: 300px;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 
 /* ini buat mulai-kuis */
 .custom-control-input {

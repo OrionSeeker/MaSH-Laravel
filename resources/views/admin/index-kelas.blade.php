@@ -13,7 +13,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Nama</th>
-                    <th>Deskripsi</th>
+                    <th class= "description-column">Deskripsi</th>
                     <th>Gambar</th>
                     <th>Action</th>
                 </tr>
@@ -21,7 +21,7 @@
                 <tr>
                     <td>{{$s->id}}</td>
                     <td>{{$s->nama}}</td>
-                    <td>{{$s->deskripsi}}</td>
+                    <td class= "description-column">{{$s->deskripsi}}</td>
                     <td><img width="100%" height="100" src="{{ $s->url_gambar ? asset('assets/img-kelas/' . $s->url_gambar) : asset('assets/img-kelas/default.jpg') }}" alt="{{ $s->nama }}"></td>
                     <td>
                         <ul class="nav">
