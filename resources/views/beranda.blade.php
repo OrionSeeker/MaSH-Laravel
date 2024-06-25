@@ -34,25 +34,31 @@
 
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="/assets/img-geser/alpro2.png" class="mx-auto d-block" alt="Alpro">
-            <div class="carousel-caption">
-                <h3>Algoritma dan Pemrograman</h3>
-                <p>Mempelajari dasar-dasar dari pemrograman</p>
-            </div>
+            <a href="{{ url('/detail-kelas/2') }}">
+                <img src="/assets/img-geser/alpro2.png" class="mx-auto d-block" alt="Alpro">
+                <div class="carousel-caption">
+                    <h3>Algoritma dan Pemrograman</h3>
+                    <p>Mempelajari dasar-dasar dari pemrograman</p>
+                </div>
+            </a>
         </div>
         <div class="carousel-item">
-            <img src="/assets/img-geser/web2.png" class="mx-auto d-block" alt="web">
-            <div class="carousel-caption">
-                <h3>Pemrograman Web</h3>
-                <p>Mempelajari dasar-dasar dari pemrograman web</p>
-            </div>
+            <a href="{{ url('/detail-kelas/4') }}">
+                <img src="/assets/img-geser/web2.png" class="mx-auto d-block" alt="web">
+                <div class="carousel-caption">
+                    <h3>Pemrograman Web</h3>
+                    <p>Mempelajari dasar-dasar dari pemrograman web</p>
+                </div>
+            </a>
         </div>
         <div class="carousel-item">
-            <img src="/assets/img-geser/sbd2.png"  class="mx-auto d-block" alt="SBD">
-            <div class="carousel-caption">
-                <h3>Sistem Basis Data</h3>
-                <p>Mempelajari dasar-dasar dari sistem basis data</p>
-            </div>
+            <a href="{{ url('/detail-kelas/3') }}">
+                <img src="/assets/img-geser/sbd2.png"  class="mx-auto d-block" alt="SBD">
+                <div class="carousel-caption">
+                    <h3>Sistem Basis Data</h3>
+                    <p>Mempelajari dasar-dasar dari sistem basis data</p>
+                </div>
+            </a>
         </div>
     </div>
 
@@ -97,7 +103,7 @@
             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
             </div>
-            <p>Dulu, saya sempat tidak percaya diri dengan kemampuan saya. Namun, skill yang saya dapatkan membuat saya berani untuk melamar ke salah satu bank BUMN ternama di Indonesia. Akhirnya, saya berhasil diterima sebagai Full Stack Developer di Bank ABC.</p>
+            <p>Dulu, saya  merasa kurang percaya diri dengan kemampuan saya. Namun, keterampilan yang saya dapat membuat saya berani untuk melamar ke salah satu perusahaan ternama di Indonesia. Akhirnya, saya berhasil diterima sebagai Full Stack Developer di Bank ABC.</p>
             <div class="user">
                 <img src="/assets/mentor-dan-review/7.jpg" alt="">
                 <div class="user-info">
@@ -114,7 +120,7 @@
             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
             </div>
-            <p>Belajar di Mataram Skill Hub tidak hanya bermanfaat bagi mereka yang masih pemula dalam hal wawasan teknologi, tetapi juga membantu profesional yang sudah berpengalaman kerja seperti saya untuk dapat mengupdate keterampilan.</p>
+            <p>Belajar di IT Skill Hub tidak hanya bermanfaat bagi para pemula dalam dunia teknologi, tetapi juga sangat membantu para profesional berpengalaman seperti saya untuk memperbarui keterampilan.</p>
             <div class="user">
                 <img src="/assets/mentor-dan-review/6.jpg" alt="">
                 <div class="user-info">
@@ -131,7 +137,7 @@
             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
             </div>
-            <p>Disajikan dengan struktur pembelajaran yang rapi, ilmu-ilmu teknis di Mataram Skill Hub sangat mudah saya pahami dan terapkan sampai sekarang. Mataram Skill Hub memastikan semua lulusannya punya dasar yang kuat di bidang pemrograman dan bidang lainnya.</p>
+            <p>Dengan struktur pembelajaran yang rapi, ilmu-ilmu teknis di IT Skill Hub sangat mudah saya pahami dan terapkan hingga sekarang. IT Skill Hub memastikan bahwa semua lulusannya memiliki dasar yang kuat di bidang pemrograman dan bidang lainnya.</p>
             <div class="user">
                 <img src="/assets/mentor-dan-review/5.jpg" alt="">
                 <div class="user-info">
