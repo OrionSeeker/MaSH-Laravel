@@ -154,6 +154,8 @@ footer .credit a{
     font-size: 1.5rem;
     color: #999;
 }
+
+/* ini buat index di kelola kelola */
 .description-column {
     max-width: 300px;
     white-space: wrap;
@@ -161,6 +163,18 @@ footer .credit a{
     text-overflow: ellipsis;
 }
 
+.soal-column {
+    max-width: 250px;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.opsi-column {
+    max-width: 150px;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 /* ini buat mulai-kuis */
 .custom-control-input {

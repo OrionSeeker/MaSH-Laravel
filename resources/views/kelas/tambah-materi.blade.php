@@ -28,7 +28,7 @@
                         <option>Judul</option>
                     </select>
                     Judul <input type="text" name="inputJudul">   
-                    Upload File (Kosongkan jika tidak ingin upload gambar)<input type="file" class="form-control-file" id="file" name="file">
+                    Upload File (Kosongkan jika tidak ingin upload file)<input type="file" class="form-control-file" id="file" name="file">
                     Link Video Youtube (Kosongkan jika memilih untuk mengupload file) <input type="text" name="inputUrl">   
                     <br>
                 </ul>

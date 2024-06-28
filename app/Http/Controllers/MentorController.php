@@ -45,7 +45,7 @@ class MentorController extends Controller
             $nomorIndukz = 'MTR00' . $nextUserId;
         }
         
-        User::create([
+        $user = User::create([
             'name' => $request->inputName,
             'nomorInduk' => $nomorIndukz,
             'email' => $request->inputEmail,
@@ -55,7 +55,7 @@ class MentorController extends Controller
         ]);
 
         KelasUser::create([
-            'user_id' => $nextUserId,
+            'user_id' => $user->id,
             'kelas_id' => $request->inputKelas,
             'role' => $request->inputRole
         ]);

@@ -24,11 +24,11 @@
                 <tr>
                     <th>ID</th>
                     <th>ID_Kelas</th>
-                    <th>Soal</th>
-                    <th>Opsi 1</th>
-                    <th>Opsi 2</th>
-                    <th>Opsi 3</th>
-                    <th>Opsi 4</th>
+                    <th class="soal-column">Soal</th>
+                    <th class="opsi-column">Opsi 1</th>
+                    <th class="opsi-column">Opsi 2</th>
+                    <th class="opsi-column">Opsi 3</th>
+                    <th class="opsi-column">Opsi 4</th>
                     <th>Opsi Benar</th>
                     <th>Action</th>
                 </tr>
@@ -36,11 +36,11 @@
                 <tr>
                     <td>{{$s->id}}</td>
                     <td>{{$s->kelas_id}}</td>
-                    <td>{{$s->soal}}</td>
-                    <td>{{$s->opsi1}}</td>
-                    <td>{{$s->opsi2}}</td>
-                    <td>{{$s->opsi3}}</td>
-                    <td>{{$s->opsi4}}</td>
+                    <td class="soal-column">{{$s->soal}}</td>
+                    <td class="opsi-column">{{$s->opsi1}}</td>
+                    <td class="opsi-column">{{$s->opsi2}}</td>
+                    <td class="opsi-column" >{{$s->opsi3}}</td>
+                    <td class="opsi-column">{{$s->opsi4}}</td>
                     <td>{{$s->opsibenar}}</td>
                     <td>
                         <ul class="nav">

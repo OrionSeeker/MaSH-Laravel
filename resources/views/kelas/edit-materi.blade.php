@@ -28,7 +28,7 @@
                         <option>Judul</option>
                     </select>
                     Judul <input type="text" name="inputJudul" value="{{$dataMateri->judul}}">   
-                    Upload File (Kosongkan jika tidak ingin upload gambar)<input type="file" class="form-control-file" id="file" name="file">
+                    Upload File (Kosongkan jika tidak ingin upload file)<input type="file" class="form-control-file" id="file" name="file">
                     Link Video Youtube (Abaikan jika isinya adalah url upload file) <input type="text" name="inputUrl" value="{{$dataMateri->url}}">   
                 </ul>
                 <br>

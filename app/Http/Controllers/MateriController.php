@@ -48,6 +48,9 @@ class MateriController extends Controller
         if($request->inputUrl){
             $fileName = $request->inputUrl;
         }
+        else{
+            $fileName = "judul";
+        }
 
         Material::create([
             'class_id' => $request->inputNamaKelas,
